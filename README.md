@@ -10,7 +10,7 @@ I am heavily copying Yapped Rune Bear and using a few utilities found in the sou
 
 ## What to expect?
 
-Nothing Much, this project is very much a personal project I am working on to not only learn how a few facets of modding Souls games work but improve my own ability coding skills.
+Nothing Much, this project is very much a personal project I am working on to not only learn how a few facets of modding Souls games work but improve my own coding skills.
 
 ## What are the current plans?
 
