@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus\App.xaml
-21784444698
+32116169438
 
-11-1791442630
+18-2022738698
 204-444230008
-Views\HomeView.xaml;Views\MainWindow.xaml;
+Views\HomeView.xaml;Views\MainWindow.xaml;Views\Popups\GetRowIdPopUp.xaml;
 
-False
+True
 
