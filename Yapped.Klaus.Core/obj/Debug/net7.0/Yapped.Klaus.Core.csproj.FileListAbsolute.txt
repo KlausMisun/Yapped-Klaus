@@ -1,0 +1,12 @@
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\bin\Debug\net7.0\Yapped.Klaus.Core.deps.json
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\bin\Debug\net7.0\Yapped.Klaus.Core.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\bin\Debug\net7.0\Yapped.Klaus.Core.pdb
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.csproj.AssemblyReference.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.AssemblyInfoInputs.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.AssemblyInfo.cs
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.csproj.CoreCompileInputs.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\refint\Yapped.Klaus.Core.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\Yapped.Klaus.Core.pdb
+E:\Coding\Projects\Yapped.Klaus.WPF\Yapped.Klaus.Core\obj\Debug\net7.0\ref\Yapped.Klaus.Core.dll

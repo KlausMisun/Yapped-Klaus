@@ -1,0 +1,14 @@
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\bin\Release\net7.0-windows\SoulsFormats.deps.json
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\bin\Release\net7.0-windows\SoulsFormats.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\bin\Release\net7.0-windows\SoulsFormats.pdb
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\bin\Release\net7.0-windows\SoulsFormats.xml
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.csproj.AssemblyReference.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.GeneratedMSBuildEditorConfig.editorconfig
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.AssemblyInfoInputs.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.AssemblyInfo.cs
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.csproj.CoreCompileInputs.cache
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\refint\SoulsFormats.dll
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.xml
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\SoulsFormats.pdb
+E:\Coding\Projects\Yapped.Klaus.WPF\SoulFormats\obj\Release\net7.0-windows\ref\SoulsFormats.dll

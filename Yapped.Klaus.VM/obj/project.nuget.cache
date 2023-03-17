@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3ZdTu6V2FSlNGTW0mjirda1eplI7n1C8vCSmpujNVK7+5NFKkkeJvhSGwSe96jv18oQ3+bfbL0bckhaRjjH/Tg==",
+  "success": true,
+  "projectFilePath": "E:\\Coding\\Projects\\Yapped.Klaus.WPF\\Yapped.Klaus.VM\\Yapped.Klaus.VM.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Massine\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

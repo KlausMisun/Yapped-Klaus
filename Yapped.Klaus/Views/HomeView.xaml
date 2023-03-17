@@ -1,0 +1,182 @@
+﻿<base:BaseView  xmlns:base="clr-namespace:Yapped.Klaus.WPF.Base"
+             x:Class="Yapped.Klaus.WPF.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Yapped.Klaus.WPF.Views"
+             xmlns:converters="clr-namespace:Yapped.Klaus.WPF.Converters" 
+             xmlns:viewmodels="clr-namespace:Yapped.Klaus.WPF.ViewModels" 
+             xmlns:utils="clr-namespace:Yapped.Klaus.WPF.ViewUtils"
+             d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="500" d:DesignWidth="900">
+    <UserControl.InputBindings>
+        <KeyBinding Command="{Binding OpenFileCommand}" Modifiers="Control" Key="O" />
+        <KeyBinding Command="{Binding SaveFileCommand}" Modifiers="Control" Key="S" />
+    </UserControl.InputBindings>
+    <DockPanel >
+        <Menu DockPanel.Dock="Top" Margin="0 0 0 0">
+            <Menu.Resources>
+                <Style TargetType="MenuItem" x:Key="TopLevelMenu">
+                    <Setter Property="Padding" Value="8 0"/>
+                </Style>
+            </Menu.Resources>
+            <MenuItem Header="File" Style="{StaticResource TopLevelMenu}">
+                <MenuItem Header="_Open" InputGestureText="Ctrl+O" Command="{Binding OpenFileCommand}" />
+                <MenuItem Header="Save" InputGestureText="Ctrl+S" Command="{Binding SaveFileCommand}"/>
+                <MenuItem Header="Save And Backup" Command="{Binding SaveAndBackUpFileCommand}"/>
+                <MenuItem Header="Restore To Last Save" Command="{Binding ReloadCurrentSaveCommand}" />
+                <MenuItem Header="Create A New Backup" Command="{Binding CreateBackUpFileCommand}" />
+                <MenuItem Header="Load Last Backup" Command="{Binding RestoreBackupCommand}"/>
+                <Separator />
+                <MenuItem Header="Show Param File" Command="{Binding ShowParamFileCommand}" />
+            </MenuItem>
+            <MenuItem Header="Edit"  Style="{StaticResource TopLevelMenu}">
+                <MenuItem Header="Add Row"/>
+                <MenuItem Header="Duplicate Row"/>
+                <MenuItem Header="Delete Row"/>
+                <MenuItem Header="Find Row"/>
+                <MenuItem Header="Find Next Row"/>
+                <MenuItem Header="Goto Row" Command="{Binding GotoRowCommand}"/>
+                <MenuItem Header="Find Field"/>
+                <MenuItem Header="Find Next Field"/>
+            </MenuItem>
+            <MenuItem Header="View" Style="{StaticResource TopLevelMenu}">
+                <MenuItem Header="Toggle Field Name Scheme" Command="{Binding ToggleFieldNameCommand}"/>
+                <MenuItem Header="Toggle Field Type Visibility" Command="{Binding ToggleFieldTypeCommand}"/>
+                <MenuItem Header="Toggle Filter Visibility" Command="{Binding ToggleFilterVisibilityCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Tools" Style="{StaticResource TopLevelMenu}"/>
+            <MenuItem Header="Field Data" Style="{StaticResource TopLevelMenu}"/>
+            <MenuItem Header="File Data" Style="{StaticResource TopLevelMenu}"/>
+            <MenuItem Header="Settings" Style="{StaticResource TopLevelMenu}"/>
+        </Menu>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="DataGrid">
+                    <Setter Property="SelectionMode" Value="Single"/>
+                    <Setter Property="CellStyle">
+                        <Setter.Value>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Padding" Value="2 3"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                            <Border Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Border.Padding" Value="50"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="#0078d7" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="RowStyle">
+                        <Setter.Value>
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#0078d7" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="RightAlignCell" TargetType="{x:Type TextBlock}">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="TextAlignment" Value="Right"/>
+                    <Setter Property="Padding" Value="5 0"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="0 10 10 10" />
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+                <Style TargetType="GridSplitter">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </Grid.Resources>
+
+            <Grid Grid.Column="0" Visibility="{Binding ShowFilters, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Param Filer: " />
+                <TextBox Grid.Column="1" Text="{Binding ParamFilterText,UpdateSourceTrigger=PropertyChanged}"  />
+            </Grid>
+
+            <DataGrid Grid.Row="1" Grid.Column="0" SelectionMode="Single" ItemsSource="{Binding FilteredData}" IsReadOnly="True" AutoGenerateColumns="False" SelectedItem="{Binding SelectedParam}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Param" Width="*" Binding="{Binding ParamName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <GridSplitter  Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Width="2" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext"/>
+
+            <Grid Grid.Column="2" Visibility="{Binding ShowFilters, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Row Filter: " />
+                <TextBox Grid.Column="1" Text="{Binding RowFilterText, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <DataGrid Grid.Row="1" Grid.Column="2" SelectionMode="Single" 
+                      SelectedItem="{Binding SelectedRow}" ItemsSource="{Binding FilteredRows}" 
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      SelectedCellsChanged="DataGrid_SelectedCellsChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn ElementStyle="{StaticResource RightAlignCell}" Header="Row" MinWidth="50" Width="Auto" Binding="{Binding ID}" />
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Text}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <GridSplitter Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Width="2" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext"/>
+
+            <Grid Grid.Column="4" Visibility="{Binding ShowFilters, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Cell Filter: " />
+                <TextBox Grid.Column="1" Text="{Binding CellsFilterText, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <DataGrid Grid.Row="1" Grid.Column="4" SelectionMode="Single" SelectedIndex="{Binding SelectedCellIndex}" ItemsSource="{Binding FilteredSelectedRowCells}" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <utils:BindingProxy x:Key="proxy" Data="{Binding}"/>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="Auto" Header="Field" Binding="{Binding ParamCell.Def.InternalName}" Visibility="{Binding Data.ShowInternalName, Source={StaticResource proxy}, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}"/>
+                    <DataGridTextColumn Width="Auto" Header="Field" Binding="{Binding ParamCell.Def.DisplayName}" Visibility="{Binding Data.ShowDisplayName, Source={StaticResource proxy}, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}"/>
+                    <DataGridTextColumn MinWidth="50" Width="Auto" Header="Value" Binding="{Binding Value, Mode=TwoWay}" IsReadOnly="False" />
+                    <DataGridTextColumn Width="Auto" Header="Type" Binding="{Binding ParamCell.Def.DisplayType}" Visibility="{Binding Data.ShowFieldType, Source={StaticResource proxy}, Converter={x:Static converters:BoolToVisibilityConverter.Instance}}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+
+</base:BaseView>

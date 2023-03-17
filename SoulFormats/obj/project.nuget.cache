@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ojs4uU4oX1vm6hpw1xhfHW6H1hPku9kiWATm4Vp25F4+Y2ad9c4AgDhVmfH1NLwhw/8TQHjMpP79sNVFUxOlAQ==",
+  "success": true,
+  "projectFilePath": "E:\\Coding\\Projects\\Yapped.Klaus.WPF\\SoulFormats\\SoulsFormats.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Klaus\\.nuget\\packages\\bouncycastle.cryptography\\2.1.1\\bouncycastle.cryptography.2.1.1.nupkg.sha512",
+    "C:\\Users\\Klaus\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
